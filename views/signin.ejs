@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"
+        />
+        <title><%= title%> | Passport Auth</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <form action="/signin" method="POST" class="p-5 w-75 m-auto">
+                <h2 class="mb-5">User Signin Account</h2>
+
+                <% if(message){%>
+                <div class="alert alert-success"><%= message%></div>
+                <%}%>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        placeholder="Johndoe"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        placeholder="********"
+                    />
+                </div>
+                <p class="d-flex justify-content-end">
+                    <small
+                        ><a href="/forgot-password">Forgot Password ?</a></small
+                    >
+                </p>
+                <button type="submit" class="btn btn-dark w-25 mb-3">
+                    Signin Account
+                </button>
+                <br />
+                <small class="text-muted"
+                    >Dosen't have an account ?
+                    <a href="/signup">Signup</a></small
+                >
+                <br />
+                <small>
+                    <a href="/">Home</a>
+                </small>
+            </form>
+        </div>
+    </body>
+</html>
